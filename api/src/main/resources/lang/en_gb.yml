@@ -1,0 +1,42 @@
+next_page: "<gradient:green:yellow>Next Page"
+previous_page: "<gradient:red:yellow>Previous Page"
+regions: "Regions"
+discovered_on: "<gradient:gray:white>Discovered on: %s"
+discovered_title:
+  - "<light_purple>%s discovered!"
+discovered_subtitle:
+  - "<white>Keep exploring to discover more!"
+already_discovered_title:
+  - "<light_purple>%s entered!"
+already_discovered_subtitle:
+  - "<white>Already discovered!"
+teleport: "<green>Click to teleport"
+teleport_cooldown: "<red>Teleport is on cooldown."
+teleport_cost: "<yellow>Teleport will cost %f%s"
+teleport_no_money: "<red>You do not have enough money to teleport."
+cannot_teleport: "<red>We can't teleport you because you don't meet the requirements for that area!"
+unknown_region: "Unknown Realm"
+exit: "<red>Exit"
+cannot_enter: "<red>You require %s to enter this area."
+previous_page_lore:
+  - "<white>Go to the previous page"
+next_page_lore:
+  - "<white>Go to the next page"
+exit_lore:
+  - "<white>Exit the GUI"
+cooldown: "<red>That is currently on cooldown."
+region_enter_actionbar: "<green>%s"
+discovering_area_placeholder: "<gold>Discovering a new area (%d%)..."
+requirement_met: "<gradient:dark_green:green>✔ %s"
+requirement_not_met: "<gradient:dark_red:red>✘ %s"
+coordinates: "<gray>Coordinates: %d, %d"
+# Fauna/flora related settings
+fauna_discover_title: "<#F5AF2F>Bestiary Updated"
+fauna_discover_subtitle: "<#04DB64>%s indexed"
+bestiary_default_hover:
+  - "<gradient:gold:yellow>Click to find out more!"
+bestiary_page_header:
+  - "    <gradient:gold:yellow>A compendium of         fauna and flora"
+  - " ------------------"
+  - " <#04DB64>Explore the world to     discover entries."
+  - " "
