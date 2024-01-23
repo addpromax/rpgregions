@@ -1,0 +1,130 @@
+# This is the config for RPGRegions.
+# ------ Useful information ------
+# Documentation can be found at https://fortitude.islandearth.net/category/rpgregions
+# Sounds can be found at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+# Materials can be found at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# ------ Support ------
+# Found a bug or need help? Join our discord at https://discord.gg/fh62mxU
+# Only paid users are entitled to support. Non-paid users can create issues at https://gitlab.com/SamB440/rpgregions-2/issues.
+# ------ Setting explanation ------
+# See wiki for more detailed information.
+#  search-offline-players: Tab complete will list offline players where possible. This can cause lag with lots of offline players due to Bukkit loading all of their data.
+#  worlds.forceload: Forcefully load worlds on startup to ensure RPGRegions recognises them. ONLY ENABLE IF YOU KNOW WHAT YOU ARE DOING!
+#  settings.metrics.send_custom_info: Disable if experiencing bStats lag spikes.
+# ------ Other config files ------
+# See lang folder for language settings.
+# See regions folder for editing region files.
+
+settings:
+  metrics:
+    send_custom_info: true # Send extra info to bStats. May want to disable if experiencing lag spikes from bStats.
+  dev:
+    debug: false # Enables debug output. Will spam console!
+    disable-slow-storage-warn: false # Should we send a warning if storage response times are slow?
+  integration:
+    name: RPGRegions # Name of the integration: WorldGuard, Residence, GriefPrevention, GriefDefender, UltraRegions, Lands, RPGRegions
+  external:
+    dynmap: true # Enable dynmap support
+  teleport:
+    # Enable a permission for costing money on teleport.
+    # Example: rpgregions.teleport.10*n+100 means It costs $100 per teleport and 10 more per block away from the target location.
+    permission-based-cost: true
+  storage:
+    cache-expiry-time: 180 # Time in seconds after a cached account is considered invalid and must be saved
+    mode: file # Storage mode to use: sqlite, file, mysql. If you are dealing with lots of players, please use a mysql database.
+  sql: # SQL settings
+    host: localhost # If you are in a docker container, please use the docker IP. Should be something like 172.18.0.1 for pterodactyl users.
+    port: 3306
+    db: RPGRegions
+    user: user
+    pass: pass
+  server:
+    tabcomplete:
+      search-offline-players: true # Show offline players in tab completion results.
+    discoveries:
+      discovered:
+        name-colour: "<#04DB64>" # The colour of item titles in the discovery GUI
+        title:
+          fadein: 20
+          stay: 60
+          fadeout: 20
+          animation_speed: 20 # Controls how fast the animation moves to the next frame
+          cooldown: 0
+          animation_sound: "BLOCK_TRIPWIRE_CLICK_ON" # Sound to play during animation
+          animation_sound_pitch: 1
+        sound:
+          name: "UI_TOAST_CHALLENGE_COMPLETE" # You can use custom resource pack sounds as well.
+          pitch: 1
+      undiscovered:
+        name-colour: "<#F43D3D>" # The colour of undiscovered item titles in the discovery GUI
+      date:
+        format: dd-MM-yyyy HH:mm:ss # https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/text/SimpleDateFormat.html
+    gui:
+      # ! READ ME FIRST !
+      #  RPGRegions allows full control of GUIs and thus configuration may be complex.
+      #  Please read about panes first: https://github.com/stefvanschie/IF/wiki/Panes and https://fortitude.islandearth.net/rpgregions/configuration#panes
+      #  Please read about masks as well: https://fortitude.islandearth.net/rpgregions/configuration#masks
+      #  The first pane (back) will be explained fully, as it has common values of all panes.
+      #  If you want to disable a pane, set `show` to `false`.
+      # ! READ ME FIRST !
+      default_region_icon: TOTEM_OF_UNDYING # Default icon of regions in the discovery GUI. Can reset icons with /rpgr forceupdateicons
+      general:
+        rows: 6 # Amount of rows in the GUI
+      back:
+        model: 0 # The item model data
+        posX: 0 # Position on the X axis within the back pane
+        posY: 5 # Position on the Y axis within the back pane
+        length: 1 # Length of the pane (usually the amount of items present)
+        height: 1 # Height of the pane
+        back: ARROW # Item to display
+      forward:
+        model: 0
+        posX: 8
+        posY: 5
+        length: 1
+        height: 1
+        forward: ARROW
+      exit:
+        model: 0
+        posX: 4
+        posY: 5
+        length: 1
+        height: 1
+        command: ''
+        show: true
+        exit: BARRIER
+      pane:
+        posX: 1
+        posY: 1
+        length: 7
+        height: 4
+      outlinePane: # This is the outside pane
+        model: 0
+        posX: 0
+        posY: 0
+        length: 9
+        height: 6
+        show: true
+        mask:
+          - '111111111'
+          - '100000001'
+          - '100000001'
+          - '100000001'
+          - '100000001'
+          - '111111111'
+        outlinePane: GRAY_STAINED_GLASS_PANE # Item to fill the outline pane with
+      innerPane: # This is the pane where all your regions are displayed
+        model: 0
+        posX: 1
+        posY: 1
+        length: 7
+        height: 4
+        show: true
+        mask:
+          - '1111111'
+          - '1111111'
+          - '1111111'
+          - '1111111'
+        innerPane: WHITE_STAINED_GLASS_PANE # Item to fill the inner pane with if no region to display
+    worlds: # Do not touch this section unless you know what you're doing
+      forceload: false # Forcefully load worlds that do not exist for RPGRegions

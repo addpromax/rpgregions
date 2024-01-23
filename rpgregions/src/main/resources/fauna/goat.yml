@@ -1,0 +1,24 @@
+# Whether this is enabled. Mostly for if you want to disable default files RPGRegions comes with.
+enabled: true
+# The type can either be of a vanilla entity type, or a MythicMob
+type: GOAT
+# A unique identifier for this fauna. Must not be the same name as a region, either.
+identifier: goat
+# Name shown in placeholder. You can use MiniMessage formatting here, especially hover events for inside the bestiary book.
+display_name: "<gradient:dark_aqua:aqua>Goat"
+
+# Description shown in bestiary book
+description:
+  - "    <gold>Bestiary - Goat</gold>"
+  - "<gold>The Goat</gold> is a fluffy, cute mob found in <aqua>cold mountainous areas</aqua>."
+  - "Goats are well-known for the milk that they produce."
+  - " "
+  - "<red>But beware!</red> Turn your back, and out of spite you shall find yourself rammed into the air."
+  - "<newpage>" # Make a new page using the <newpage> tag. This is not MiniMessage, but a custom tag by RPGRegions.
+  - "Example text on page two."
+
+# Triggers that define when this entity is discovered
+triggers:
+  # Will be discovered when nearby to a goat in a radius of 5.
+  nearby:
+    radius: 5.0

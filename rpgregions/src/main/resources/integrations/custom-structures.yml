@@ -1,0 +1,18 @@
+# This is the file for additional support for the CustomStructures plugin.
+
+# Should we automatically generate regions based on structures created?
+auto-generate: true
+
+# This is a group of template definitions. Templates are defined in plugins/RPGRegions/templates.
+# You can use /rpgre to export a template region.
+# The name of the file should be put here. The template will then be used to automatically generate a region.
+templates:
+  demo: # For the "demo" structure...
+    template: "custom_structures_template_demo.json"
+    commands:
+      # You must specify a list of commands that create a valid region in your current integration
+      # {id} is replaced with the generated region id, e.g "demo_<random uuid>" and {world} with the world it was in
+      # {minX} {maxX}, etc. is the generated min/max positions of the structure.
+      - "rpgri create {id} cuboid {world}"
+      - "rpgri addpos {id} {world} {minX} {minY} {minZ}"
+      - "rpgri addpos {id} {world} {maxX} {maxY} {maxZ}"

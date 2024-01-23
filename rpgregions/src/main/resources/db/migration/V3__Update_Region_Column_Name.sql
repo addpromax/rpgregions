@@ -1,0 +1,1 @@
+ALTER TABLE rpgregions_discoveries RENAME COLUMN region to discovery_id;

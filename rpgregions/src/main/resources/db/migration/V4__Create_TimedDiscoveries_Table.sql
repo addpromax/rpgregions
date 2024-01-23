@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS rpgregions_timed_discoveries (uuid varchar(32) NOT NULL, region varchar(32) NOT NULL, start bigint(9223372036854775807) NOT NULL, latest bigint(9223372036854775807), PRIMARY KEY(uuid, region));

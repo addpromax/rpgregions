@@ -1,0 +1,16 @@
+# This is the file for editing the Lands integration.
+
+# Should we automatically generate regions based on lands created?
+auto-generate: true
+
+# What is the minimum size in chunks of a land to automatically generate a region?
+min-land-size: 10
+
+# This is a group of template definitions. Templates are defined in plugins/RPGRegions/templates.
+# You can use /rpgre to export a template region.
+# The name of the file should be put here. The template will then be used to automatically generate a region.
+templates:
+  10: # At >= 10 land size
+    template: "land_template_10.json"
+  20: # At >= 20 land size
+    template: "land_template_20.json"
